@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const menu = [
   { label: "Home", href: "#home", active: true },
   { label: "Experience", href: "#experience" },
@@ -12,9 +14,17 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-6">
         <a
           href="#home"
-          className="font-serif-display text-3xl tracking-tight text-black"
+          className="font-serif-display text-2xl sm:text-3xl tracking-tight text-black flex items-center gap-4"
         >
-          Tashfia Tabassum Hasan
+          <Image
+            src="/images/tta-avatar.png"
+            alt="Portrait illustration of Tashfia Tabassum Hasan"
+            width={52}
+            height={52}
+            className="h-12 w-12 rounded-full object-cover"
+            priority
+          />
+          <span>Tashfia Tabassum Hasan</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
