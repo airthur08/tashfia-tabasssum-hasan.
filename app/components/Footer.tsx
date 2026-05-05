@@ -28,7 +28,7 @@ type LinkColumnProps = {
 function LinkColumn({ title, items }: LinkColumnProps) {
   return (
     <div>
-      <h3 className="text-xs uppercase tracking-wider text-black font-medium mb-4">
+      <h3 className="text-xs uppercase tracking-wider text-white font-medium mb-4">
         {title}
       </h3>
       <ul className="space-y-2">
@@ -38,8 +38,7 @@ function LinkColumn({ title, items }: LinkColumnProps) {
               href={item.href}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
-              className="text-sm transition-colors hover:text-black"
-              style={{ color: "#6F6F6F" }}
+              className="text-sm text-white/75 transition-colors hover:text-white"
             >
               {item.label}
             </a>
@@ -52,18 +51,30 @@ function LinkColumn({ title, items }: LinkColumnProps) {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full">
+    <footer className="relative w-full overflow-hidden bg-black text-white">
+      <Image
+        src="/images/footer-tta-mobile.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover md:hidden"
+        aria-hidden
+      />
+      <Image
+        src="/images/footer-tta-desktop.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="hidden object-cover md:block"
+        aria-hidden
+      />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(60% 60% at 50% 100%, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0) 70%)",
-        }}
+        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15 md:bg-gradient-to-r md:from-black/80 md:via-black/35 md:to-black/15"
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
-        <div className="liquid-glass w-full rounded-3xl p-8 md:p-12 text-black/70">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
+        <div className="w-full rounded-[28px] border border-white/20 bg-black/25 p-8 text-white shadow-2xl backdrop-blur-md md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-10">
             <div className="md:col-span-5">
               <a href="#home" className="flex items-center gap-4">
@@ -74,15 +85,12 @@ export default function Footer() {
                   height={52}
                   className="h-12 w-12 rounded-full object-cover"
                 />
-                <span className="font-serif-display text-2xl tracking-tight text-black">
+                <span className="font-serif-display text-2xl tracking-tight text-white">
                   Tashfia Tabassum Hasan
                 </span>
               </a>
 
-              <p
-                className="text-sm leading-relaxed max-w-sm mt-6"
-                style={{ color: "#6F6F6F" }}
-              >
+              <p className="text-sm leading-relaxed text-white/75 max-w-sm mt-6">
                 BBA student at North South University and Executive Associate
                 at Paper Rhyme Advertising. Strategic partnerships,
                 national-level event organizing, and outreach — building
@@ -97,19 +105,13 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="pt-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
-            <p
-              className="text-[10px] uppercase tracking-widest"
-              style={{ color: "#6F6F6F" }}
-            >
+          <div className="pt-6 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+            <p className="text-[10px] uppercase tracking-widest text-white/70">
               © 2026 Tashfia Tabassum Hasan · Dhaka, Bangladesh
             </p>
 
             <div className="flex items-center gap-3">
-              <span
-                className="text-[10px] uppercase tracking-widest"
-                style={{ color: "#6F6F6F" }}
-              >
+              <span className="text-[10px] uppercase tracking-widest text-white/70">
                 Connect:
               </span>
               <a
@@ -117,8 +119,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="transition-colors hover:text-black"
-                style={{ color: "#6F6F6F" }}
+                className="text-white/75 transition-colors hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
