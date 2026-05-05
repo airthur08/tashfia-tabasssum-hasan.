@@ -35,11 +35,6 @@ export default function Contact() {
       <p className="mt-4 text-sm uppercase tracking-wide" style={{ color: "#6F6F6F" }}>
         📍 Dhaka, Bangladesh
       </p>
-
-      <hr className="mt-16 border-[#E0E0E0]" />
-      <p className="mt-6 text-sm" style={{ color: "#6F6F6F" }}>
-        © 2026 Tashfia Tabassum Hasan.
-      </p>
     </RevealOnScroll>
   );
 }

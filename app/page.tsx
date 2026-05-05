@@ -5,6 +5,7 @@ import Education from "./components/Education";
 import Clubs from "./components/Clubs";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import { connection } from "next/server";
 
 export default async function Home() {
@@ -19,6 +20,7 @@ export default async function Home() {
       <Clubs />
       <Skills />
       <Contact />
+      <Footer />
     </main>
   );
 }

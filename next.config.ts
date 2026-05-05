@@ -57,22 +57,29 @@ const nextConfig: NextConfig = {
   // Only React strict mode (no extra runtime, just dev correctness).
   reactStrictMode: true,
   async headers() {
+    const staticAssetHeaders =
+      process.env.NODE_ENV === "production"
+        ? [
+            {
+              // Long-lived caching for the hashed Next.js build assets.
+              source: "/_next/static/:path*",
+              headers: [
+                {
+                  key: "Cache-Control",
+                  value: "public, max-age=31536000, immutable",
+                },
+              ],
+            },
+          ]
+        : [];
+
     return [
       {
         // Apply security headers to all routes.
         source: "/:path*",
         headers: securityHeaders,
       },
-      {
-        // Long-lived caching for the hashed Next.js build assets.
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      ...staticAssetHeaders,
     ];
   },
 };
