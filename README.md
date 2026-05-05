@@ -31,8 +31,8 @@ You can use any package manager, but `bun` is what the lockfile pins.
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/airthur08/tashfia-tabasssum-hasan.git
-cd tashfia-tabasssum-hasan
+git clone https://github.com/airthur08/tashfia-tabasssum-hasan..git
+cd tashfia-tabasssum-hasan.
 
 # 2. Install dependencies
 bun install
