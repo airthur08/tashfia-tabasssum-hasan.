@@ -45,7 +45,7 @@ export default function Navigation() {
           href="https://www.linkedin.com/in/tashfia-tabassum-h-1167352b0"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-black text-white px-6 py-2.5 text-sm transition-transform duration-200 hover:scale-[1.03] inline-block"
+          className="rounded-full bg-black text-white px-4 py-2 text-xs sm:px-6 sm:py-2.5 sm:text-sm transition-transform duration-200 hover:scale-[1.03] inline-block whitespace-nowrap"
         >
           Let&apos;s Connect
         </a>
